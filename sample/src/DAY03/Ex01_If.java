@@ -1,5 +1,8 @@
 package DAY03;
 
+//2024-02-05 
+//MSA 기반 풀스택 교육 4일차
+
 import java.util.Scanner;
 
 //2024-02-02 
