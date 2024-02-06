@@ -1,5 +1,8 @@
 package DAY05.Class;
 
+//2024-02-05 
+//MSA 기반 풀스택 교육 4일차
+
 // 상속, Inhastance
 // - 키워드 : 자식 클래스 extends 부모 클래스
 public class Raichu extends Pikachu{

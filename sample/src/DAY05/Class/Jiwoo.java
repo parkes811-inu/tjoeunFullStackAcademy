@@ -1,5 +1,8 @@
 package DAY05.Class;
 
+//2024-02-05 
+//MSA 기반 풀스택 교육 4일차
+
 public class Jiwoo {
 	public static void main(String[] args) {
 		// 객체 생성 (Instance)

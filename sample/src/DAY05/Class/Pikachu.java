@@ -1,5 +1,8 @@
 package DAY05.Class;
 
+//2024-02-05 
+//MSA 기반 풀스택 교육 4일차
+
 public class Pikachu {
 		// 클래스 		: 객체를 정의하는 설계도
 		// 멤버			: 변수, 메소드
