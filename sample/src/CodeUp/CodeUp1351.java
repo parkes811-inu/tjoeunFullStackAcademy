@@ -1,8 +1,8 @@
-package solve1116;
+package CodeUp;
 
 import java.util.Scanner;
 
-public class solve1351 {
+public class CodeUp1351 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
