@@ -33,6 +33,15 @@ public class Pikachu {
 			System.out.println("매개변수가 있는 생성자가 실행된다.");
 		}
 		
+		// 메소드 오버로딩
+		// : 같은 이름의 메소드를 매개변수의 타입/순서/개수를 다르게 하여 중복 정의하는 것
+		public Pikachu(int energy, String type, int age) {
+			this.energy = energy;
+			this.type = type;
+			System.out.println("매개변수가 있는 생성자가 실행된다.");
+		}
+		
+		
 		// 메소드
 		// - 접근지정자 반환타입 메소드명 ( 매개변수 ) {}
 		public String aAttack() {

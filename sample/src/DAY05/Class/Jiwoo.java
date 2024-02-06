@@ -15,6 +15,7 @@ public class Jiwoo {
 		System.out.println("타입 : " + pikachu.type);
 		System.out.println("공격 A : " + pikachu.aAttack());
 		System.out.println("공격 B : " + pikachu.bAttack());
+		System.out.println();
 		
 		Pikachu pikachu20 = new Pikachu(150, "전기");
 		System.out.println("######### 피카츄 (LV. 20) #########");
@@ -22,13 +23,25 @@ public class Jiwoo {
 		System.out.println("타입 : " + pikachu20.type);
 		System.out.println("공격 A : " + pikachu20.aAttack());
 		System.out.println("공격 B : " + pikachu20.bAttack());
-		
-		Raichu Raichu = new Raichu();
+		System.out.println();
+
+		Raichu raichu = new Raichu();
 		System.out.println("######### 라이츄 #########");
-		System.out.println("에너지 : " + Raichu.energy);
-		System.out.println("타입 : " + Raichu.type);
-		System.out.println("공격 A : " + Raichu.aAttack());
-		System.out.println("공격 B : " + Raichu.bAttack());
+		System.out.println("에너지 : " + raichu.energy);
+		System.out.println("타입 : " + raichu .type);
+		System.out.println("공격 A : " + raichu.aAttack());
+		System.out.println("공격 B : " + raichu.bAttack());
+		System.out.println();
+
+		Raichu Raichu40 = new Raichu(300, "슈퍼전기");
+		System.out.println("######### 라이츄 (Lv. 40) #########");
+		System.out.println("에너지 : " + Raichu40.energy);
+		System.out.println("타입 : " + Raichu40.type);
+		System.out.println("공격 A : " + Raichu40.aAttack());
+		System.out.println("공격 B : " + Raichu40.bAttack());
+		System.out.println("공격 C : " + Raichu40.cAttack());
+		System.out.println();
+
 	}
 	 
 }
