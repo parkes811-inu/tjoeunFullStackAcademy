@@ -54,5 +54,11 @@ public class Pikachu {
 		public String bAttack() {
 			return "전광석화";
 		}
+
+		// toString()
+		@Override
+		public String toString() {
+			return "Pikachu [energy=" + energy + ", type=" + type + "]";
+		}
 }
 
