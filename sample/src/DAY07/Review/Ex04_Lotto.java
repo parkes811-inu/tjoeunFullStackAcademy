@@ -27,12 +27,20 @@ public class Ex04_Lotto {
 		
 		// 1부터 45사이의 랜덤수 6개를 배열에 중복 없이 저장
 		int arr[] = new int [6];
-		boolean check[] = new boolean [46];
-		arr[0] = (int)(Math.random() * 45) + 1;
-		
-		for(int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + " ");
+		int lotto1[] = new int[6];
+		for (int i = 0; i < 6; i++) {
+			int random1 = (int)(Math.random() * 45 + 1);
+			lotto1[i] = random1;
+			// 중복 제거
+			for(int j = 0; j < i; j++) {
+				// 중복이 되는 경우
+				if(lotto1[j] == random) {
+					i--;
+				}
+			}
+			System.out.print(random + " ");
 		}
+		System.out.println();
 		
 
 	}
