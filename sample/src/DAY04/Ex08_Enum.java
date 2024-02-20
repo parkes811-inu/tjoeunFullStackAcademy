@@ -12,7 +12,6 @@ enum Test {A, B, C, D, E, F};
 public class Ex08_Enum {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		// enum(열거타입)
 		// - 요소들을 명명한 값으로 집합을 이루는 자료형
