@@ -103,7 +103,7 @@ public class BoardDAO extends JDBConnection {
 	public int insert(Board board) {
 		int result = 0;		// 결과 : 적용된 데이터 건수
 			
-		String sql = " INTSERT INTO board (title, write, content) "
+		String sql = " INSERT INTO board ( title, writer, content ) "
 				   + " VALUES( ?, ?, ? ) ";
 		
 		try {
@@ -129,13 +129,12 @@ public class BoardDAO extends JDBConnection {
 	// 데이터 수정
 	public int update(Board board) {
 		int result = 0;		// 결과 : 적용된 데이터 건수
-		
-		String sql = " UDATE board "
+		String sql = " UPDATE board "
 				   + " SET title = ? "
-				   + "    ,writer = ? "
-				   + "    ,content = ? "
-				   + "    ,upd_date = now() "
-				   + " WHERE no = ";
+				   + " ,writer = ? "
+				   + " ,content = ? "
+				   + " ,upd_date = now() "
+				   + " WHERE no = ? ";
 		
 		try {
 			psmt = con.prepareStatement(sql);		// query 실행 객체 생성
@@ -164,7 +163,7 @@ public class BoardDAO extends JDBConnection {
 		int result = 0;		// 결과 : 적용된 데이터 건수
 		
 		String sql = " DELETE FROM board "
-				   + " WHERE no = ";
+				   + " WHERE no = ? ";
 		
 		try {
 			psmt = con.prepareStatement(sql);	// query 실행 객체 생성

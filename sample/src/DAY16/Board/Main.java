@@ -102,6 +102,7 @@ public class Main {
 		
 		// 글 번호(no)를 전달하여 게시글 정보 데이터 요청
 		int no = sc.nextInt();
+		sc.nextLine();
 		Board board = boardService.select(no);
 		
 		// 게시글 정보 출력
