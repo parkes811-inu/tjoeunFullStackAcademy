@@ -389,6 +389,8 @@ ALTER USER HR ACCOUNT UNLOCK;
 
 ```sql
 
+-- SQL 쿼리 실습 (1번 ~ 8번)
+
 -- 1. system 계정에 접속하는 SQL
 conn system/orcl;
 
