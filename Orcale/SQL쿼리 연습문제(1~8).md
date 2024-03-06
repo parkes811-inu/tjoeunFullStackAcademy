@@ -26,25 +26,40 @@
 </br>
 
 > • c## 정책을 없애기 위한 쿼리
+
 ```sql
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 ```
 </br>
+
 > • HR 계정 생성
--- CREATE USER 계정명 IDENTIFIED BY 비밀번호;
-CREATE USER HR IDENTIFIED BY 123456;
 </br>
 
-> • 테이블 스페이스 변경 
+-- CREATE USER 계정명 IDENTIFIED BY 비밀번호;
+
+```sql 
+CREATE USER HR IDENTIFIED BY 123456;
+```
+
+</br>
+
+> • 테이블 스페이스 변경
+
+ </br>
+ 
  : HR 계정의 기본 테이블 영역을 users 영역으로 지정 						  	
 
 ```sql
 -- ALTER USER 계정명 DEFAULT TABLESPACE users;
 ALTER USER HR DEFAULT TABLESPACE users;
 ```
+
 </br>
 
 > • 계정이 사용할 수 있는 용량 설정
+
+ </br>
+ 
  : HR 계정의 사용 용량을 무한대로 지정
 
 ```sql 
@@ -52,32 +67,40 @@ ALTER USER HR DEFAULT TABLESPACE users;
 ALTER USER HR QUOTA UNLIMITED ON users;
 ```
 </br>
+
 > • 계정에 권한을 부여
 
 ```sql
 -- GRANT 권한명1, 권한명2 TO 계정명;
 GRANT connect, resource TO HR;
 ```
+
 </br>
+
 > • 계정 삭제 : HR 계정 삭제
 
 ```sql
 -- DROP USER 계정명 [CASCADE];
 DROP USER HR CASCADE;
 ```
+
 </br>
-> • 계정 잠금 해제 
+
+> • 계정 잠금 해제 </br>
 
 ```sql
 -- ALTER USER 계정명 ACCOUNT UNLOCK;
 ALTER USER HR ACCOUNT UNLOCK;
 ```
+
 </br>
 
 ----------------------------------------------------------------------
 
 <h2>3. 데이터베이스 기본</h2>
+
 </br>
+
  • 데이터 : 측정 및 수집한 값들을 의미
  
  • 정보 : 데이터를 가공하여 의미를 부여한 형태
