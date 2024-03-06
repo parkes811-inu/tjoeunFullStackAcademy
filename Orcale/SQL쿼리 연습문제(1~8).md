@@ -3,18 +3,20 @@
 <h2> 1. SQL Developer 설치 링크</h2>
  </br>
  • https://www.oracle.com/database/sqldeveloper/technologies/download/
+ </br>
  - version : 19c version install
  </br>
 • 오라클 홈페이지에 접속하여 SQL Developer 다운로드 
 </br>
 ----------------------------------------------------------------------
 </br>
- <h2>2. 사용자 계정 생성<h2></br>
+ <h2> 2. 사용자 계정 생성<h2></br>
 	 
  : 오라클 11g 버전 이하는 어떤 이름으로도 계정 생성이 가능했으나, 12c 버전 이상부터는 'c##' 접두어를 붙여서 계정을 생성하도록 정책이 변경됨. </br>
 
  **c## 을 붙히지 않고 계정 생성 시 아래 오류 발생**  
  **- ORA-65096: 공통 사용자 또는 롤 이름이 부적합합니다.**
+ 
 </br>
 
 > • c## 정책을 없애기 위한 쿼리
@@ -26,6 +28,7 @@ ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 -- CREATE USER 계정명 IDENTIFIED BY 비밀번호;
 CREATE USER HR IDENTIFIED BY 123456;
 </br>
+
 > • 테이블 스페이스 변경 
  : HR 계정의 기본 테이블 영역을 users 영역으로 지정 						  	
 
@@ -34,6 +37,7 @@ CREATE USER HR IDENTIFIED BY 123456;
 ALTER USER HR DEFAULT TABLESPACE users;
 ```
 </br>
+
 > • 계정이 사용할 수 있는 용량 설정
  : HR 계정의 사용 용량을 무한대로 지정
 
@@ -42,7 +46,7 @@ ALTER USER HR DEFAULT TABLESPACE users;
 ALTER USER HR QUOTA UNLIMITED ON users;
 ```
 </br>
->• 계정에 권한을 부여
+> • 계정에 권한을 부여
 
 ```sql
 -- GRANT 권한명1, 권한명2 TO 계정명;
@@ -63,6 +67,7 @@ DROP USER HR CASCADE;
 ALTER USER HR ACCOUNT UNLOCK;
 ```
 </br>
+
 ----------------------------------------------------------------------
 
 <h2>3. 데이터베이스 기본</h2>
@@ -136,6 +141,7 @@ ALTER USER HR ACCOUNT UNLOCK;
 </br>
 
 ----------------------------------------------------------------------
+
 </br>
 
 3. 데이터 모델
@@ -163,8 +169,11 @@ ALTER USER HR ACCOUNT UNLOCK;
  - 속성(Attribute)
   
  - 관계(Relation)
+
 </br>
+
 • 릴레이션의 구성요소
+
 </br>
 
  - Relation 	: 데이터들을 2차원 테이블의 구조로 저장한 테이블
@@ -194,6 +203,7 @@ ALTER USER HR ACCOUNT UNLOCK;
 </br>
   
 ----------------------------------------------------------------------
+
 </br>
 
 4. 관계형 데이터베이스
@@ -207,7 +217,9 @@ ALTER USER HR ACCOUNT UNLOCK;
 • SQL(Structured Query Language)
 
  : 구조화된 질의어, RDBMS에서 데이터를 다루고 관리하는 질의 언어
+ 
 </br>
+
 • 관계형 데이터베이스 제품
 
  : ORACLE, MySQL, MS-SQL
@@ -215,6 +227,7 @@ ALTER USER HR ACCOUNT UNLOCK;
 ----------------------------------------------------------------------
 
 <h2>5. SQL 분류 </h2>
+
 </br>
 
 ><h4>• DDL, Data Definition Language</h4>
