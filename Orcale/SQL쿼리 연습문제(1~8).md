@@ -301,7 +301,9 @@ ALTER USER HR ACCOUNT UNLOCK;
  - GRANT		: 권한 부여
 
  - REVOKE		: 권한 해제
+  
  </br>
+ 
 > <h4>• TCL, Transaction Control Language</h4>
 
  : 트랜잭션 단위로 데이터 변경사항을 영구 저장하거나 되돌리는 명령어
@@ -335,9 +337,8 @@ ALTER USER HR ACCOUNT UNLOCK;
 
  : 컬럼이 저장되는 데이터 유형</br>
 
-><h4>• 문자 데이터 타입</h4>
+> <h4>• 문자 데이터 타입</h4>
 
-</br>
 
  - CHAR(크기)			: 고정길이 문자 (최대 2,000byte, 기본 값이 1byte)
 
@@ -361,14 +362,16 @@ ALTER USER HR ACCOUNT UNLOCK;
 
  - BINARY_FLOAT		: 32비트 부동소수점 수
 
- - BINARY_DOUBLE	: 64비트 부동소수점 수
+ - BINARY_DOUBLE	: 64비트 부동소수점 수 </br>
+ 
 
 > <h4>• 날짜 데이터 타입</h4>  </br>
 
  - DATE			: 연, 월, 일, 시, 분, 초 까지 입력 가능, 기원전 4712년 1월 1일 ~ 9999년12월 31일 까지
 
  - TIMESTAMP	: 연, 월, 일, 시, 분, 초, 밀리초 까지 입력 가능 (11byte) </br>
- 
+
+ </br>
 
 > <h4>• LOB타입, (Large Object)</h4>
 
