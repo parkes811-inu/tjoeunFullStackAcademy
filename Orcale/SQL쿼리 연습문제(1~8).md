@@ -267,7 +267,7 @@ ALTER USER HR ACCOUNT UNLOCK;
 
 </br>
 
-><h4>• DDL, Data Definition Language</h4>
+> <h4>• DDL, Data Definition Language</h4>
 
  : 테이블을 포함한 여러 객체 생성, 수정, 삭제 등을 하는 명령어
  </br>
@@ -281,7 +281,7 @@ ALTER USER HR ACCOUNT UNLOCK;
  - TURUNCATE	: 내부의 내용을 삭제
  </br>
 
-><h4>• DML, Data Management Language</h4>
+> <h4>• DML, Data Management Language</h4>
 
  : 테이블 내의 데이터를 조회, 추가, 수정, 삭제하는 명령어</br>
  
@@ -293,6 +293,7 @@ ALTER USER HR ACCOUNT UNLOCK;
 
  - DELETE		: 데이터 삭제
  </br>
+ 
 > <h4>• DCL, Data Control Language</h4>
 
  : 데이터에 대한 사용 권한을 부여하거나 해제하는 명령어</br>
@@ -311,6 +312,7 @@ ALTER USER HR ACCOUNT UNLOCK;
 
  - ROLLBACK		: 트랜잭션에서 변경 사항을 취소하고, 이전 상태로 되돌리는 명령어
  </br>
+ 
 > <h4>• 트랜잭션의 특징 - ACID</h4>
 
  : 트랜잭션의 특징으로 인해, 데이터베이스의 무결성과 일관성을 보장할 수 있다.</br>
@@ -328,23 +330,30 @@ ALTER USER HR ACCOUNT UNLOCK;
  				  
 ----------------------------------------------------------------------
 </br>
+
 <h2>6. 데이터 타입</h2>
 
  : 컬럼이 저장되는 데이터 유형</br>
 
 ><h4>• 문자 데이터 타입</h4>
-</br>
- - CHAR(크기)			: 고정길이 문자 (최대 2,000byte, 기본 값이 1byte) 
 
- - VARCHAR2(크기)		: 가변길이 문자 (최대 4,000byte, 기본 값이 1byte)
+</br>
+
+ - CHAR(크기)			: 고정길이 문자 (최대 2,000byte, 기본 값이 1byte)
+
+ - VARCHAR2(크기)		: 가변길이 문자 (최대 4,000byte, 기본 값이 1byte) 
 
  - NCHAR(크기)		: 고정길이 유니코드 문자
 
  - NVARCHAR2(크기)	: 가변길이 유니코드 문자
 
- - LONG				: 최대 2GB의 가변길이 문자형
+ - LONG				: 최대 2GB의 가변길이 문자형 </br>
 
-><h4>• 숫자 데이터 타입</h4>
+</br>
+
+> <h4>• 숫자 데이터 타입</h4>
+
+</br>
 
  - NUMBER(크기, 자리)	: 가변숫자 (최대 22byte)
 
@@ -354,15 +363,16 @@ ALTER USER HR ACCOUNT UNLOCK;
 
  - BINARY_DOUBLE	: 64비트 부동소수점 수
 
-><h4>• 날짜 데이터 타입</h4>
+> <h4>• 날짜 데이터 타입</h4>  </br>
 
  - DATE			: 연, 월, 일, 시, 분, 초 까지 입력 가능, 기원전 4712년 1월 1일 ~ 9999년12월 31일 까지
 
- - TIMESTAMP	: 연, 월, 일, 시, 분, 초, 밀리초 까지 입력 가능 (11byte)
+ - TIMESTAMP	: 연, 월, 일, 시, 분, 초, 밀리초 까지 입력 가능 (11byte) </br>
+ 
 
-><h4>• LOB타입, (Large Object)</h4>
+> <h4>• LOB타입, (Large Object)</h4>
 
-: 대용량 데이터를 저장할 수 있는 데이터 타입
+: 대용량 데이터를 저장할 수 있는 데이터 타입 </br>
 
  - CLOB		: 문자형 대용량 객체, 고정길이/가변길이
 
@@ -371,6 +381,9 @@ ALTER USER HR ACCOUNT UNLOCK;
  - BLOB		: 이진형 대용량 객체(파일)
 
  - BFILE	: 대용량 이진 파일에 위치/이름 등을 저장하는 타입 (최대 4GB)
+  
+</br>
+
 ```sql
 
 -- 1. system 계정에 접속하는 SQL
