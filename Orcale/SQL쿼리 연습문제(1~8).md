@@ -17,52 +17,52 @@
  **- ORA-65096: 공통 사용자 또는 롤 이름이 부적합합니다.**
 </br>
 
-> <h4>• c## 정책을 없애기 위한 쿼리</h4>
+> • c## 정책을 없애기 위한 쿼리
 ```sql
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 ```
-
-> <h4>• HR 계정 생성</h4>
+</br>
+> • HR 계정 생성
 -- CREATE USER 계정명 IDENTIFIED BY 비밀번호;
 CREATE USER HR IDENTIFIED BY 123456;
-
-> <h4>• 테이블 스페이스 변경</h4> 
+</br>
+> • 테이블 스페이스 변경 
  : HR 계정의 기본 테이블 영역을 users 영역으로 지정 						  	
 
 ```sql
 -- ALTER USER 계정명 DEFAULT TABLESPACE users;
 ALTER USER HR DEFAULT TABLESPACE users;
 ```
-
-> <h4>• 계정이 사용할 수 있는 용량 설정</h4>
+</br>
+> • 계정이 사용할 수 있는 용량 설정
  : HR 계정의 사용 용량을 무한대로 지정
 
 ```sql 
 -- ALTER USER 계정명 QUOTA UNLIMIED ON 테이블스페이스;
 ALTER USER HR QUOTA UNLIMITED ON users;
 ```
-
-><h4>• 계정에 권한을 부여</h4>
+</br>
+>• 계정에 권한을 부여
 
 ```sql
 -- GRANT 권한명1, 권한명2 TO 계정명;
 GRANT connect, resource TO HR;
 ```
-
-> <h4>• 계정 삭제 : HR 계정 삭제</h4>
+</br>
+> • 계정 삭제 : HR 계정 삭제
 
 ```sql
 -- DROP USER 계정명 [CASCADE];
 DROP USER HR CASCADE;
 ```
-
-> <h4>• 계정 잠금 해제 </h4>
+</br>
+> • 계정 잠금 해제 
 
 ```sql
 -- ALTER USER 계정명 ACCOUNT UNLOCK;
 ALTER USER HR ACCOUNT UNLOCK;
 ```
-
+</br>
 ----------------------------------------------------------------------
 
 <h2>3. 데이터베이스 기본</h2>
