@@ -138,6 +138,7 @@ ALTER USER HR ACCOUNT UNLOCK;
 
 	  
 > <h4>• File System VS Database</h4>
+
 </br>
 
  : 데이터를 파일 시스템으로 관리하면 데이터가 중복 및 누락될 가능성이 비교적 크고,여러 시스템 간의 데이터를 공유하는 것이 어렵다.
@@ -167,6 +168,7 @@ ALTER USER HR ACCOUNT UNLOCK;
  	• 저장 데이터베이스 : 실제 데이터가 저장되는 곳
 
  - DBMS, Database Management System : 데이터베이스를 관리하는 시스템 (ex) ORACLE, My-SQL, MS-SQL
+  
 </br>
 
 ----------------------------------------------------------------------
@@ -189,8 +191,11 @@ ALTER USER HR ACCOUNT UNLOCK;
  - 관계형
   
  </br> 
+ 
 • 관계형 데이터 모델 : ERD, 행과 열을 갖는 2차원 구조의 테이븗 형태를 통하여 자료를 표현하는 모델
+
 </br>
+
 • 관계형 데이터 모델의 핵심 구성 요소 
 
  - 개체(Entity) = 릴레이션(실제 DB의 테이블과 대응)
@@ -216,8 +221,11 @@ ALTER USER HR ACCOUNT UNLOCK;
  - Cardinality	: 릴레이션의 입력된 튜플의 개수
 
  - Domain 		: 하나의 속성이 가질 수 있는 값의 범위
+  
 </br> 
+
 • 릴레이션의 특징
+
 </br>
 
  - 튜플의 속성은 하나의 데이터만 저장한다.
@@ -273,7 +281,7 @@ ALTER USER HR ACCOUNT UNLOCK;
  - TURUNCATE	: 내부의 내용을 삭제
  </br>
 
-> <h4>• DML, Data Management Language</h4>
+><h4>• DML, Data Management Language</h4>
 
  : 테이블 내의 데이터를 조회, 추가, 수정, 삭제하는 명령어</br>
  
