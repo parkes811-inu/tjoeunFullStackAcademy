@@ -6,6 +6,8 @@
 
 > <h3>erd editor</h3>
 
+![TEST](https://github.com/parkes811-inu/tjoeunFullStackAcademy/tree/master/Orcale/img/ERD예제만들기.drawio.png)
+
 <img align="left" src="https://github.com/parkes811-inu/tjoeunFullStackAcademy/tree/master/Orcale/img/ERD예제만들기.drawio.png", height="200x", width="500x">
 
 
