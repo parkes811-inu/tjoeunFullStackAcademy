@@ -14,6 +14,7 @@
 </br>
 
 > **<h2>TOP N QUERY</h2>**
+![쇼핑몰기본예제](https://github.com/parkes811-inu/tjoeunFullStackAcademy/assets/75926505/814409c3-d5e6-455b-8292-3a43b6a0b1f9)
 
 </br> 
 
