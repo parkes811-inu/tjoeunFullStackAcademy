@@ -5,7 +5,9 @@
 > <h3>erdcloud</h3>
 
 > <h3>erd editor</h3>
-![TESTSS]("https://github.com/parkes811-inu/tjoeunFullStackAcademy/tree/master/Orcale/img/ERD예제만들기.drawio.png")
+
+![poster](./ERD예제만들기.drawio.png)
+<!-- ![TESTSS]("https://github.com/parkes811-inu/tjoeunFullStackAcademy/tree/master/Orcale/img/ERD예제만들기.drawio.png")-->
 <img align="left" src="https://github.com/parkes811-inu/tjoeunFullStackAcademy/tree/master/Orcale/img/ERD예제만들기.drawio.png", height="200x", width="500x">
 
 
