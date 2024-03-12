@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 스타일</title>
+
+    <style>
+        /* 기본 텍스트 스타일 */
+        body {
+            /* 글꼴 지정 */
+            font-family: Arial, Helvetica, sans-serif;
+            /* 글꼴 크기 */
+            font-size: 16px;
+            /* 줄 간격 */
+            line-height: 1.8;   /* px단위, 그냥숫자(배율) */
+            /* 색상 */
+            color: #ff22ee;
+        }
+        h1 {
+            font-size: 32px;
+            /* 글꼴 굵기 */
+            font-weight: lighter;  
+            /* (얇은)100~900(굵은) */
+            /* lighter, normal, bold, bolder */
+        }
+        p.bold {
+            font-weight: bold;
+            color: #22ffcc;
+        }
+        p.highlight {
+            /* 글꼴 스타일 */
+            font-style: italic; /* normal, oblique, italic */
+            color: red;
+        }
+        a {
+            /* 글꼴 장식 */
+            text-decoration: none;  
+            /* none(없음), underline(밑줄)
+             , overline(윗줄), line-through(취소선) */
+            color: white;
+            background-color: black;
+            padding: 12px 24px;
+            border-radius: 5px;
+        }
+        /* :hover 가상 선택자 - 마우스 올렸을 때*/
+        a:hover {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>텍스트 스타일 지정하기</h1>
+    <p>텍스트 스타일을 지정하는 문장입니다.</p>
+    <p class="bold">강조하는 문장입니다.</p>
+    <p class="highlight">중요한 문장입니다.</p>
+    <a href="https://알클.com">Button</a>
+</body>
+</html>

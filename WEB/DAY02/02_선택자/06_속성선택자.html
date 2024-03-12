@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <style>
+        section {
+            margin: 20px 0;
+        }
+
+        /* 
+            [속성] { }
+            [속성='A'] { }       : 속성='A' 요소를 선택
+            [속성^='A'] { }      : 속성='A'로 시작하는 요소 선택
+            [속성$='A'] { }      : 속성='A'로 끝나는 요소 선택
+            [속성*='A'] { }      : 속성='A'를 포함하는 요소 선택
+        */
+
+        /* section 태그, 속성 : id, 속성값 : '2' 끝나는 값 */
+        section[id$='2'] {
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        /* div 태그, 속성명 class */
+        div[class] {
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* 속성값이 'l'로 시작하는 경우 */
+        div[class^='l'] { background-color: skyblue; }
+
+        /* 속성값이 'i'가 포함되는 경우 */
+        div[class*='i'] { background-color: pink; }
+
+        /* 속성값이 '4'로 끝나는 경우 */
+        div[class$='4'] { background-color: royalblue; }
+
+        /* 
+            속성값이 'e'가 포함되고 
+            속성값이 '2'로 끝나는 경우
+        */
+        div[class*='e'][class$='2'] { background-color: springgreen; }
+
+
+    </style>
+</head>
+<body>
+    <h1>속성 선택자</h1>
+    <hr>
+    <section id="part1">
+        <div class="lst1">속성 선택자 1</div>
+        <div class="lis2">속성 선택자 2</div>
+        <div class="le2">속성 선택자 3</div>
+        <div class="l4">속성 선택자 4</div>
+    </section>
+
+    <section id="part2">
+        <div class="lst1">속성 선택자 1</div>
+        <div class="lis2">속성 선택자 2</div>
+        <div class="le2">속성 선택자 3</div>
+        <div class="l4">속성 선택자 4</div>
+    </section>
+</body>
+</html>

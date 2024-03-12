@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상선택자 2</title>
+    <style>
+        table {
+            border-collapse: collapse;  /* 테이블, 셀 테두리를 합침 */
+            border: 1px solid black;
+        }
+        th, td { 
+            border-bottom: 1px solid black;
+        }
+
+        table.first {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 5px 5px 5px #aaa;
+            /* 그림자 : x축 y축 블러 색상 */
+        }   
+
+        table.first th {
+            padding: 8px;
+            background-color: cornflowerblue;
+            color: white;
+            letter-spacing: 3px;
+        }
+
+        /* th 태그 중 2번재 요소를 선택 */
+        table.first th:nth-child(2)::first-letter {
+            letter-spacing: 45px;
+            text-align: center;
+        }
+
+        table.first td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* 자식 요소 중 홀수인 요소만 선택 */
+        /* odd : 홀수 */
+        table.first tr:nth-child(odd) {
+            background-color: lightgray;
+        }
+        /* 자식 요소 중 짝수인 요소만 선택 */
+        /* even : 짝수 */
+        table.first tr:nth-child(even) {
+            background-color: azure;
+        }
+
+        /* 자식 요소 중 첫번째, 2번째, 마지막을 선택 */
+        table.first td:first-child { width: 15%; }
+        table.first td:nth-child(2) { width: 70%; }
+        table.first td:last-child { width: 25%; }
+
+        /* :hover - 마우스가 요소에 올라가 있는 상태 */
+        table.first tr:hover {
+            background-color: royalblue;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* :empty - 내용이 없는 상태 */
+        p:empty { margin: 100px; }
+
+        table.second {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.second th {
+            padding: 8px;
+            background-color: orange;
+            color: white;
+            text-align: center;
+        }
+
+        table.second td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* 첫번째, 2번째, 마지막 요소만 선택 */
+        table.second td:first-of-type { width: 15%; }
+        table.second td:nth-of-type(2) { width: 65%; }
+        table.second td:last-of-type { width: 20%; }
+
+        /* nth-of-child */
+        section.part1 *:first-child { background-color: cornflowerblue;}
+        section.part1 *:last-child { background-color: coral; }
+        section.part1 *:nth-child(2) {}
+        section.part1 *:nth-last-child(2) {}
+
+        /* nth-of-type */
+        /* nth-of-type 류는 지정한 요소들기리만 순서를 카운팅한다 */
+        section.part2 div:first-of-type { background-color: coral; }
+        section.part2 div:last-of-type { background-color: cornflowerblue;}
+        section.part2 div:nth-of-type(2) { background-color: lightseagreen;}
+        section.part2 div:nth-last-of-type(2) { background-color: mediumpurple; }
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>가상선택자</h1>
+    <h3>nth-of-child</h3>
+    <table class="first">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>날짜</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>가상선택자</td>
+            <td>2024.03.12</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>하위선택자</td>
+            <td>2024.04.12</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>인접선택자</td>
+            <td>2024.04.12</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>형제선택자</td>
+            <td>2024.05.12</td>
+        </tr>
+    </table>
+    <p></p>
+    <div class="space"></div>
+    <hr>
+    <h3>nth-of-type</h3>
+    <table class="second">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>날짜</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>가상선택자</td>
+            <td>2024.03.12</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>하위선택자</td>
+            <td>2024.04.12</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>인접선택자</td>
+            <td>2024.04.12</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>형제선택자</td>
+            <td>2024.05.12</td>
+        </tr>
+    </table>
+
+    <p></p>
+    <hr>
+    <h3>nth-child vs nth-of-type</h3>
+    <section class="part1">
+        <h2>가상선택자 파트1 - nth-child</h2>
+        <div>div 요소 1</div>
+        <div>div 요소 2</div>
+        <div>div 요소 3</div>
+        <div>div 요소 4</div>
+        <div>div 요소 5</div>
+        <p>p 요소 1</p>
+    </section>
+    <p></p>
+    <section class="part2">
+        <h2>가상선택자 파트1 - nth-of-type</h2>
+        <div>div 요소 1</div>
+        <div>div 요소 2</div>
+        <div>div 요소 3</div>
+        <div>div 요소 4</div>
+        <div>div 요소 5</div>
+        <p>p 요소 1</p>
+    </section>
+
+</body>
+</html>
