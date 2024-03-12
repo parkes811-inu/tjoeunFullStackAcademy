@@ -45,7 +45,6 @@
 <br>
 
 > **선택자의 종류** </br> </br>
-
 |종류|내용|예시|
 |------|---|---|
 |전체 선택자|전체 문서 선택|*|
@@ -151,3 +150,26 @@
 ||word-spacing|
 ||white-space|
 ||word-break|
+
+<br>
+
+**font** <br>
+
+    : 글자와 관련된 스타일을 지정하는 속성
+
+```html
+font: italic small-caps bold 12px/30px Georgia, serif;
+
+
+font: [font-style], [font-variant], [font-weight], [font-size/line-height], [font-family]
+```
+
+<br>
+
+**리스트 속성** <br>
+
+    - 목록 스타일 속성
+        - list-style
+            - list-style-type : 리스트 요소의 스타일을 지정하는 속성
+            - list-style-position 
+            - list-style-image
