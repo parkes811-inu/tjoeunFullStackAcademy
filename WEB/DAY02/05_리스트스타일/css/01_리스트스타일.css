@@ -43,3 +43,17 @@ ol.none { list-style-type: none; }
 /* list-style-image */
 .check { list-style-image: url(../img/check.png); }
 .cancel { list-style-image: url(../img/cancel.png); }
+
+
+li::marker {
+    width: 16px;
+}
+
+li::before {
+    /*--content: url('../img/cancel.png');
+    --content: url('../img/check.png');*/
+    content: url('../img/food.png');
+    position: absolute;
+    left: -30px;
+    top: 3px;
+}
