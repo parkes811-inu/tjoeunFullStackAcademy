@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for ~ in 반복문</title>
+    <script>
+        // 배열 선언
+        const todoList = ['자바미션 풀기','자바스크립트 복습하기','식사하기','운동하기']
+
+        // for( const [반복 인덱스] in [배열])
+        // i : 반복변수 (0 ~ n - 1)
+        for (let i in todoList) {
+            i = Number(i)
+            console.log(`${i + 1} 번째 할 일 : ${todoList[i]}`)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
