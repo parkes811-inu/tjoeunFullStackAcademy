@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+
+    <!-- Fontawesome 아이콘 라이브러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <span id="top"></span>
+    <input type="checkbox" name="bars" id="bars" >
+
+    <!-- 플로팅 버튼 -->
+    <div class="floating">
+        <a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
+    </div>
+
+    <header>
+        <!-- util -->
+        <div class="util">
+            <ul class="util-menu">
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+            </ul>
+        </div>
+
+        <!-- menu -->
+        <div class="menu">
+            <div class="menu-left">
+                <a href=""><i class="fa fa-user"></i></a>
+            </div>
+            <div class="menu-center">
+                <nav class="pc">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="board.html">Board</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu-right">
+                <a href="javascript:;">
+                    <!-- <i class="fa fa-bars"></i> -->
+                    <!-- <input type="checkbox" name="bars" id="bars"> -->
+                    <label class="bars" for="bars">
+                        <span class="bar top"></span>
+                        <span class="bar mid"></span>
+                        <span class="bar bottom"></span>
+                    </label>
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- 모바일 메뉴 -->
+    <!-- <nav class="mobile">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="board.html">Board</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+        <ul class="sidemenu">
+            <li>
+                <a href="">
+                    <h3>사이드바 메뉴</h3>
+                    <p>사이드바 메뉴 설명</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h3>사이드바 메뉴</h3>
+                    <p>사이드바 메뉴 설명</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <!-- 섹션 -->
+        <!-- 메인 배너 -->
+        <section id="section1">
+            <div class="slide">
+                <!-- .item>img[src="img/slide$$.jpg"][alt="이미지"] -->
+                <div class="item"><img src="img/slide01.jpg" alt="이미지"></div>
+                <div class="item"><img src="img/slide02.jpg" alt="이미지"></div>
+                <div class="item"><img src="img/slide03.jpg" alt="이미지"></div>
+            </div>
+        </section>
+        <!-- 카드뷰 -->
+        <section id="section2">
+            <div class="card-box">
+                <!-- 카드 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/slide01.JPG" width="300px" alt="">
+                    </div>
+                    <div class="card-title">
+                        <h2>최신 이미지 01</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>최신 이미지01 입니다</p>
+                        <p>신상품 설명 내용입니다.</p>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="item"><span>2024-03-15</span></div>
+                        <div class="item"><i class="fa fa-heart"></i></div>
+                    </div>
+                </div>
+                <!-- 카드 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/slide02.JPG" width="300px" alt="">
+                    </div>
+                    <div class="card-title">
+                        <h2>최신 이미지 01</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>최신 이미지01 입니다</p>
+                        <p>신상품 설명 내용입니다.</p>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="item"><span>2024-03-15</span></div>
+                        <div class="item"><i class="fa fa-heart"></i></div>
+                    </div>
+                </div>
+                <!-- 카드 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/slide03.JPG" width="300px" alt="">
+                    </div>
+                    <div class="card-title">
+                        <h2>최신 이미지 01</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>최신 이미지01 입니다</p>
+                        <p>신상품 설명 내용입니다.</p>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="item"><span>2024-03-15</span></div>
+                        <div class="item"><i class="fa fa-heart"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 레이아웃A -->
+        <section id="section3" class="layout-detail">
+            <div class="inner">
+                <div class="detail-left">
+                    <img src="img/sec-03.jpg" alt="섹션3 이미지">
+                </div>
+                <div class="detail-right">
+                    <div class="content-box">
+                        <h3>Title - Section 03</h3>
+                        <p>
+                            Section Detail Contents
+                            Section Detail Contents
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <a href="" class="btn">Button 01</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 레이아웃B -->
+        <section id="section4" class="layout-detail reverse">
+            <div class="inner">
+                <div class="detail-left">
+                    <img src="img/sec-04.jpg" alt="섹션4 이미지">
+                </div>
+                <div class="detail-right">
+                    <div class="content-box">
+                        <h3>Title - Section 04</h3>
+                        <p>
+                            Section Detail Contents
+                            Section Detail Contents
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <a href="" class="btn">Button 01</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer-menu">
+            <div class="site-map">
+                <div class="item">
+                    <ul>
+                        <li>Board</li>
+                        <li>공지사항</li>
+                        <li>자유 게시판</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <ul>
+                        <li>Gallery</li>
+                        <li>취미 갤러리</li>
+                        <li>자유 갤러리</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <ul>
+                        <li>Gallery</li>
+                        <li>취미 갤러리</li>
+                        <li>자유 갤러리</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="family-site">
+                <select name="site" id="site">
+                    <option value="1">카카오</option>
+                    <option value="2">네이버</option>
+                    <option value="3">구글</option>
+                </select>
+            </div>
+        </div>
+        <div class="copy">
+            <p>Copyright ⓒ ALOHA CLASS. All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>
