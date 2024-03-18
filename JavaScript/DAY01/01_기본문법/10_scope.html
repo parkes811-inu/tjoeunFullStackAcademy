@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope</title>
+    <script>
+        function test() {
+            var local = 10
+
+            if( local > 0 ) {
+                let local = 20
+                console.log(`local : ${local}`);
+            }
+            
+            console.log(`local : ${local}`);
+        }
+
+        function test2() {
+            let local2 = 10
+
+            if( local2 > 0 ) {
+                // 여기로 호이스팅(변수, 함수 등이 해당 범위 맨 위로 끌어올려지는 것)
+                console.log(`local2 : ${local2}`);
+                
+                // let local2 = 20     // 변수 선언 위치
+                console.log(`local2 : ${local2}`);
+            }
+            console.log(`local2 : ${local2}`);
+        }
+
+        test()
+        test2()
+
+        // var, let 각각 전역범위로 호이스팅
+        // * let 은 호이스팅 되지만, 값이 초기화되기 전에 접근할 수 없음
+        //   --> let 변수를 초기화 전에 접근 시, ReferenceError 발생
+        console.log(`test3 : ${test3}`);
+        console.log(`test4 : ${test4}`);
+        var test3 = 'test'
+        let test4 = 'test'
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
