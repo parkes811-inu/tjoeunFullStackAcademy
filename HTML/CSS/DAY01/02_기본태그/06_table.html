@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 태그 - 표 형태의 데이터를 표시하는 태그</title>
+</head>
+<body>
+    <!--
+        table
+        - tr            : 표의 하나의 행을 표시
+        - th            : 표의 제목을 행(header)의 열(data) 표시,
+                            * 텍스트를 bold체로 가운데 정렬
+        - td            : 표의 한 칸의 열(data)을 표시
+
+        * rowspan       : 상하(행)의 셀을 병합
+        * colspan       : 좌우(열)의 셀을 병합
+            * 병합할 첫 번째 셀을 기준으로 셀의 개수를 지정
+        - caption       : 표의 제목
+        - border        : 표의 테두리 굵기(px) 지정
+
+        - thead         : 테이블 최상단의 영역을 지정
+        - tbody         : 테이블 몸체 영역을 지정
+        - tfoot         : 테이블 최하단의 영역을 지정
+
+        - colgroup      : 열 그룹을 지정하여 하나 이상의 열에 동일한 형식을 지정하기 위해 사용
+            - col       : 그룹화된 열을 나타내기 위해 사용
+    -->
+    <h1>카페 메뉴판</h1>
+    <table border="1">
+        <tr>
+            <th width="200">메뉴</th>
+            <th width="100">가격</th>
+            <th width="100">종류</th>
+        </tr>
+        <!--(tr>(td*3))*3-->
+        <tr>
+            <td align="center">아메리카노</td>
+            <td align="center">1,500</td>
+            <td align="center">hot/ice</td>
+        </tr>
+        <tr>
+            <td align="center">카페라떼</td>
+            <td align="center">2,500</td>
+            <td align="center">hot/ice</td>
+        </tr>
+        <tr>
+            <td align="center">아이스티</td>
+            <td align="center">3,000</td>
+            <td align="center">ice</td>
+        </tr>
+    </table>
+
+    <h1>영화관 좌석표</h1>
+    <table border="1">
+        <caption>좌석 배치도</caption>
+        <!-- (tr>(th[width="100"]{$열}*3))*3 -->
+        <tr>
+            <th width="100">1열</th>
+            <th width="100">2열</th>
+            <th width="100">3열</th>
+        </tr>
+        <tr>
+            <th width="100">4열</th>
+            <th width="100">5열</th>
+            <th width="100">6열</th>
+        </tr>
+        <tr>
+            <th width="100">7열</th>
+            <th width="100">8열</th>
+            <th width="100">9열</th>
+        </tr>
+    </table>
+
+    <h1>월별 수입</h1>
+    <table border="1">
+
+
+        <thead>
+            <tr>
+                <td>월별</td>
+                <td>수입</td>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td>합계</td>
+                <td>7,000,000</td>
+            </tr>
+        </tfoot>
+
+        <tbody>
+            <tr>
+                <td>03월</td>
+                <td>1,000,000</td>
+            </tr>
+            
+            <tr>
+                <td>04월</td>
+                <td>1,500,000</td>
+            </tr>
+
+            <tr>
+                <td>05월</td>
+                <td>2,000,000</td>
+            </tr>
+
+            <tr>
+                <td>06월</td>
+                <td>2,500,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h1>3월 달력</h1>
+    <table>
+        <colgroup>
+            <col style="background-color: red;">
+            <col span="6" style="background-color: blue;">
+        </colgroup>
+        <tr>
+            <th style="color: red;">일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+        </tr>
+
+        <tr>
+            <!--td{$}*7-->
+            <td style="color: red;">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <!--td{$}*7-->
+            <td style="color: red;">8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+        </tr>    
+
+        <tr>
+            <!--td{$}*7-->
+            <td style="color: red;">15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+
+        <tr>
+            <!--td{$}*7-->
+            <td style="color: red;">22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+    </table>
+    <div style="height: 500px;"></div>
+</body>
+</html>

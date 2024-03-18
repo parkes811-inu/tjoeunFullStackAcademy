@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+
+    <!-- Fontawesome 아이콘 라이브러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <span id="top"></span>
+    <input type="checkbox" name="bars" id="bars" >
+
+    <!-- 플로팅 버튼 -->
+    <div class="floating">
+        <a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
+    </div>
+
+    <!-- 헤더 -->
+    <header>
+        <!-- util -->
+        <div class="util">
+            <ul class="util-menu">
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+            </ul>
+        </div>
+
+        <!-- menu -->
+        <div class="menu">
+            <div class="menu-left">
+                <a href=""><i class="fa fa-user"></i></a>
+            </div>
+            <div class="menu-center">
+                <nav class="pc">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="board.html">Board</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu-right">
+                <a href="javascript:;">
+                    <!-- <i class="fa fa-bars"></i> -->
+                    <!-- <input type="checkbox" name="bars" id="bars"> -->
+                    <label class="bars" for="bars">
+                        <span class="bar top"></span>
+                        <span class="bar mid"></span>
+                        <span class="bar bottom"></span>
+                    </label>
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- 👩‍💻 상품 목록 -->
+    <div class="container-lg">
+        <div class="detail-area">
+            <!-- 사이드바 -->
+            <div class="snb">
+                <ul>
+                    <li class="active"><a href="">전체 보기</a></li>
+                    <li><a href="">COLLECTION</a></li>
+                    <li><a href="">OUTER</a></li>
+                    <li><a href="">TOP</a></li>
+                    <li><a href="">PANTS</a></li>
+                    <li><a href="">ACC</a></li>
+                    <li><a href="">ETC</a></li>
+                </ul>
+            </div>
+            <!-- 상품 목록 영역 -->
+            <div class="product-box">
+                <!-- 검색/필터 -->
+                <div class="search-filter">
+                    <!-- 검색창 -->
+                    <form action="/serach" method="post">
+                        <input type="text" name="keyword" id="keyword" placeholder="검색어">
+                        <button type="submit" class="btn-search">
+                            <!-- 검색 아이콘(돋보기) -->
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <!-- 필터 -->
+                    <!-- 드랍다운 UI -->
+                    <ul class="dropdown">
+                        <li>
+                            <a href="">
+                                <!-- 필터 아이콘 -->
+                                <i class="fa fa-filter"></i>
+                                필터 
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="">낮은 가격순</a></li>
+                                <li><a href="">높은 가격순</a></li>
+                                <li><a href="">인기순</a></li>
+                                <li><a href="">최신순</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 상품 목록 -->
+                <section class="product-list">
+                    <div class="inner">
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 상품 항목 -->
+                        <div class="product-card">
+                            <div class="img-box">
+                                <a href=""><img src="img/product01.jpg" alt="상품 이미지"></a>
+                            </div>
+                            <div class="content-box">
+                                <div class="price">
+                                    <h3>
+                                        <span class="n-price">97,500원</span>
+                                        <span class="d-price">75,000원</span>
+                                        <span class="discount">23%</span>
+                                    </h3>
+                                </div>
+                                <div class="title">
+                                    <a href=""><h3>[1만장 돌파✨] 더블 V 서스펜더 원피스</h3></a>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="color">
+                                    <span class="option-red"></span>
+                                    <span class="option-green"></span>
+                                    <span class="option-blue"></span>
+                                </div>
+                                <div class="size">
+                                    <span class="option-size">S</span>
+                                    <span class="option-size active">M</span>
+                                    <span class="option-size active">L</span>
+                                    <span class="option-size">XL</span>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <div class="review">
+                                    <!-- 리뷰 아이콘 -->
+                                    <i class="fa fa-comments"></i>
+                                    <span>120</span>
+                                </div>
+                                <div class="action">
+                                    <!-- 좋아요 아이콘 -->
+                                    <a href=""><i class="fa fa-heart-o"></i></a>
+                                    <!-- 장바구니 아이콘 -->
+                                    <a href=""><i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- 페이지 네비게이션 -->
+                <div class="pagination">
+                    <ul>
+                        <li class="page"><a href=""><i class="fa fa-angle-double-left"></i></a></li>
+                        <li class="page"><a href=""><i class="fa fa-angle-left"></i></a></li>
+                        <li class="page"><a href="">1</a></li>
+                        <li class="page"><a href="">2</a></li>
+                        <li class="page"><a href="">3</a></li>
+                        <li class="page"><a href="">4</a></li>
+                        <li class="page"><a href="">5</a></li>
+                        <li class="page"><a href=""><i class="fa fa-angle-right"></i></a></li>
+                        <li class="page"><a href=""><i class="fa fa-angle-double-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+        <ul class="sidemenu">
+            <li>
+                <a href="">
+                    <h3>사이드바 메뉴</h3>
+                    <p>사이드바 메뉴 설명</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h3>사이드바 메뉴</h3>
+                    <p>사이드바 메뉴 설명</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer-menu">
+            <div class="site-map">
+                <div class="item">
+                    <ul>
+                        <li>Board</li>
+                        <li>공지사항</li>
+                        <li>자유 게시판</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <ul>
+                        <li>Gallery</li>
+                        <li>취미 갤러리</li>
+                        <li>자유 갤러리</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <ul>
+                        <li>About</li>
+                        <li>사이트 소개</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="family-site">
+                <select name="site" id="site">
+                    <option value="1">카카오</option>
+                    <option value="2">네이버</option>
+                    <option value="3">구글</option>
+                </select>
+            </div>
+        </div>
+        <div class="copy">
+            <p>Copyright ⓒ ALOHA CLASS. All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 선택자</title>
+    <style>
+        h1 {
+            font-size: 2.5rem;
+            color: #25a9bd;
+        }
+        section {
+            padding: 10px;
+            border: 5px solid orange;
+        }
+
+        /* :first-of-type   - 첫 요소를 선택 */
+        section:first-of-type { color: #cc2222; }
+
+        /* :last-of-type  - 마지막 요소를 선택 */
+        /* ::first-letter - 첫 글자를 선택 */
+        section:last-of-type::first-letter {
+            font-size: 2.4em;
+            float: left;
+            padding: 0 2px;
+            margin: -1px 3px 0 0;
+            font-weight: bold;
+            color: orange;
+        }
+
+        section em {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        /* :before - 요소가 시작되기 전을 선택 */
+        section em::before {
+            content: "\"";
+            padding-right: 0.5em;
+            color: red;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* :after - 요소가 끝난 다음을 선택 */
+        section em::after {
+            content: "\"";
+            padding-left: 0.5em;
+            color: red;
+            font-weight: bold;
+        }
+
+        /* :enabled - 활성화된 태그를 선택 */
+        input:enabled { background-color: aqua;}
+        /* :disabled - 비활성화된 태그를 선택 */
+        input:disabled { background-color: gray; }
+        input::placeholder { color: white; }
+
+    </style>
+</head>
+<body>
+    <h1>가상 선택자</h1>
+    <section>
+        국군의 조직과 편성은 법률로 정한다. 각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할 수 있다. 모든 국민은 언론·출판의 자유와 집회·결사의 자유를 가진다. 국가원로자문회의의 의장은 직전대통령이 된다. 다만, 직전대통령이 없을 때에는 대통령이 지명한다.
+    </section>
+    <section>
+        <em>성공의 8할은 일단 출석하는 것이다.</em>
+        국군의 조직과 편성은 법률로 정한다. 각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할 수 있다. 모든 국민은 언론·출판의 자유와 집회·결사의 자유를 가진다. 국가원로자문회의의 의장은 직전대통령이 된다. 다만, 직전대통령이 없을 때에는 대통령이 지명한다.
+    </section>
+    <section>
+        국군의 조직과 편성은 법률로 정한다. 각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할 수 있다. 모든 국민은 언론·출판의 자유와 집회·결사의 자유를 가진다. 국가원로자문회의의 의장은 직전대통령이 된다. 다만, 직전대통령이 없을 때에는 대통령이 지명한다.
+    </section>
+
+    <form action="">
+        <p>
+            <label for="">이름</label>
+            <input type="text">
+        </p>
+        <p>
+            <label for="">이메일</label>
+            <input type="text" placeholder="sample@mail.com" disabled>
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*(선택자) { 스타일 속성 : 속성값; }*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 헤더 영역 */
+        .header {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* 메인 영역 */
+        .left-side {
+            float: left;
+            background-color: #aaa;
+            width: 25%;
+            padding: 10px;
+            height: 300px;
+        }
+
+        .main {
+            float: left;
+            background-color: #bbb;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+        }
+
+        .right-side {
+            float: left;
+            background-color: #ccc;
+            padding: 20px;
+            width: 25%;
+            height: 300px;
+        }
+
+        .footer {
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+            /*height: 100px;*/
+            color: white;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>div 레이아웃</h1>
+
+    <!--.header>h2{헤더영역}-->
+    <div class="header">
+        <h2>헤더영역</h2>
+    </div>
+
+    <!--.container>(.left-side{왼쪽}+.main{메인}+.right-side{오른쪽})-->
+    <div class="container">
+        <div class="left-side">왼쪽</div>
+        <div class="main">메인</div>
+        <div class="right-side">오른쪽</div>
+    </div>
+
+    <!--.footer>p{푸터영역}--> 
+    <div class="footer">
+        <p>푸터영역</p>
+    </div>
+</body>
+</html>
