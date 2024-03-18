@@ -8,3 +8,12 @@
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) 
 
 </details>
+
+### 학습 순서
+
+<br>
+
+  1. JAVA
+  2. ORACLE
+  3. HTML/CSS
+  4. Javascript
