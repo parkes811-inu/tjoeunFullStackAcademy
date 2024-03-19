@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백함수</title>
+    <script>
+        // 함수 선언
+        function callThreeTimes(callback) {
+            for(let i = 0 ; i < 3 ; i++ ) {
+                callback(i+1)
+            }
+        }
+
+
+        // 함수 호출
+        // * 익명함수로 지정한 콜백함수
+        callThreeTimes(function (i) {
+            console.log(`${i}번째 함수 호출`);
+        })
+
+        // 화살표 함수
+        callThreeTimes( (i) => {
+            console.log(`${i}번째 함수 호출`);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrray</title>
+    <script>
+        const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let array = []
+
+        for (let i = 0; i < list.length; i++) {
+            const element = list[i];
+            if(element % 2 == 1) {
+                array.push(element * element)
+            }
+        }
+        console.log(array)
+
+        let oddList = list.filter( item => {
+             return item % 2 == 1 
+        });
+
+        let result = oddList.map( item => item * item )
+        console.log(result)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

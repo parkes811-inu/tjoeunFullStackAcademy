@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <script>
+        const array = new Array(1,2,3,4,5)
+
+        // forEach : 배열의 모든 요소 반복
+        // * 전달인자를 콜백함수 작성한다.
+        array.forEach(function(item) {
+            document.write(`<h1>${item}</h1>`)
+        });
+
+        // push() : 맨 끝에 요소 추가
+        array.push(10)
+
+        console.log(array);
+
+        // pop()  : 맨 끝에 요소 제거
+        array.pop()
+
+        console.log(array);
+
+        // sort() : 정렬
+        let list = ['황보', '박명수', '이성경', '전종서', '김조은', '김더조은']
+
+        list.sort()
+
+        console.log(list)
+
+        list.reverse()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

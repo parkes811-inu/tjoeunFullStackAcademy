@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 준비 이벤트</title>
+    <script>
+        // body 태그가 아직 로딩되지 않았기 때문에 에러가 발생.
+        // html 요소에 접근 불가하기 때문에 body 밑에서 작성해야 한다.
+        // document.body.innerHTML = '<h1>Hello DOM~!</h1>'
+    </script>
+</head>
+<body>
+        <!--
+           자바 스크립트로 html 요소를 접근할 때는 일반적으로
+           body 태그 맨 끝에 <script> 를 작성한다. 
+        -->
+    <script>
+        document.body.innerHTML= '<h1>Hello DOM~!</h1>'
+    </script>
+</body>
+</html>
