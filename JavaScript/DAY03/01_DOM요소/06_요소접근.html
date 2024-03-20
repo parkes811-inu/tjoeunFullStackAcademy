@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 접근</title>
+    <script>
+        /* 노드 관계에 따라서 요소를 접근하는 방법 */
+        document.addEventListener("DOMContentLoaded", () => {
+            let $container = document.getElementsByClassName('container')[0]
+
+            // childNodes : 해당 요소의 자식 노드들
+            console.log( $container.childNodes );
+            console.log( $container.childNodes[1] );
+            console.log( $container.childNodes[3] );
+
+            let $section1 = document.getElementsByTagName('section')[0]
+            console.log( $section1.firstChild );
+            console.log( $section1.childNodes[1] );
+            console.log( $section1.lastChild );
+
+            console.log( $section1.childNodes[1].previousSibling );
+            console.log( $section1.childNodes[1].nextSibling );
+
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>제목입니다</h1>
+        <ul class="list">
+            <li><a href="">리스트1</a></li>
+            <li><a href="">리스트2</a></li>
+            <li><a href="">리스트3</a></li>
+            <li><a href="">리스트4</a></li>
+        </ul>
+    </div>
+    <section>
+        <img src="" alt="이미지1">
+        <img src="" alt="이미지2">
+        <img src="" alt="이미지3">
+    </section>
+    <section>
+        <!-- .item#item${아이템$}*4 -->
+        <div class="item" id="item1">아이템1 <span>추가요소</span></div>
+        <div class="item" id="item2">아이템2</div>
+        <div class="item" id="item3">아이템3</div>
+        <div class="item" id="item4">아이템4</div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 생성</title>
+    <script>
+        // write() 메소드로 요소 생성하기
+        document.write('<h1>요소 생성</h1>')
+
+        // createElement() 메소드 요소 생성하기
+        const h3 = document.createElement('h3')
+        h3.textContent = '이름을 작성해주세요'
+        // ➡ <h3>이름을 작성해주세요</h3>
+
+        // 자식요소 추가하기
+        // 선택요소.appendChild(추가요소)
+        // : 선택요소의 자식요소를 추가하는 메소드
+        document.body.appendChild(h3)
+
+        // 문서 준비 이벤트
+        document.addEventListener("DOMContentLoaded", () => {
+            // ul 요소 선택
+            const ul = document.getElementById('list')
+            // li 요소 생성
+            const li = document.createElement('li')
+            // 텍스트 노드 생성
+            const text = document.createTextNode('빽다방')
+            // 속성 노드 생성
+            // : style=""
+            const textStyle = document.createAttribute('style')
+            textStyle.value = 'color : brown'
+
+            // <li>
+            // <li>빽다방</li>
+            li.appendChild(text)
+
+            // <li style="color brown">빽다방</li>
+            li.setAttributeNode(textStyle)
+
+            // <li style="color brown">빽다방입니다.</li>
+            li.append('입니다.')
+            
+            // <ul>  ⬅ <li> 자식요소로 추가
+            ul.appendChild(li)
+            // appendChild()    : 자식 요소로 노드 1개를 추가
+            // append()         : 여러 요소 및 텍스트 추가
+                
+            // 버튼 및 입력 태그 선택
+            const btnCreate = document.getElementById('create') // 추가
+            const btnRemove = document.getElementById('remove') // 삭제
+            const input = document.getElementById('input')
+
+            // 이벤트 핸들러 추가
+            btnCreate.addEventListener('click', add)
+            btnRemove.addEventListener('click', remove)
+            input.addEventListener('keyup', enter)
+        })
+
+        // 리스트 추가 기능
+        function add() {
+            const ul = document.getElementById('list')
+            const li = document.createElement('li')
+            const input = document.getElementById('input')
+            const text = document.createTextNode(input.value)
+
+            // ✅ 체크박스 추가하기 
+            const checkbox = document.createElement('input')
+            checkbox.type = 'checkbox'
+            li.appendChild(checkbox)
+            li.appendChild(text)        // <li>입력내용</li>
+            ul.appendChild(li)          // <ul><li>입력내용</li></ul> ✅ 추가
+            input.value = ''            // 추가 후 입력상자 비우기        
+
+            // 체크박스 이벤트 
+            checkbox.addEventListener('change', () => {
+                // checkbox.checked : 체크여부 ✅ true , ❌ false 
+                const completeList = document.getElementById('complete')
+                if( checkbox.checked ) {
+                    li.style.textDecoration = 'line-through'    // 취소선
+                    completeList.appendChild(li)
+                    ul.removeChild(li)
+                } else {
+                    // 완료한 일 목록에서 제거
+                    completeList.removeChild(li)
+                    // Todo List 에 추가
+                    li.style.textDecoration = 'none'            // 취소선❌
+                    ul.appendChild(li)
+                }
+            }) 
+            
+        }
+
+        // 리스트 삭제 기능
+        function remove() {
+            const ul = document.querySelector('#list')
+            const lists = document.querySelectorAll('#list li')
+
+            // 선택요소.removeChild( 자식요소 )
+            // : 선택요소의 지정한 자식요소를 삭제한다
+            ul.removeChild( lists[lists.length-1] )
+
+            // 선택요소.remove()
+            // : 모든 자식요소 삭제
+            // ul.remove()
+        }
+
+        // 키보드에서 엔터 입력
+        function enter(event) {
+            if( event.keyCode == 13 )
+                add()
+        }
+
+    </script>
+</head>
+<body>
+    <hr>
+
+    
+    <h3>Todo List</h3>
+    <input type="text" name="input" id="input" placeholder="입력하세요">
+    <button id="create">추가</button>
+    <button id="remove">삭제</button>
+    <ul id="list"></ul>
+    <hr>
+    <h3>완료한 일</h3>
+    <ul id="complete"></ul>
+
+
+</body>
+</html>

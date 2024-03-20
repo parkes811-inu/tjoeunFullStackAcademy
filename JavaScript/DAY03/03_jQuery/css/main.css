@@ -1,0 +1,172 @@
+
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto&display=swap');
+
+/*
+ * Base
+ */
+html {
+    font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    background-color: #656565;
+}
+
+img {
+    vertical-align: middle;
+}
+
+button {
+    outline: none;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+.page-header {
+    background-color: #fff;
+}
+
+.page-header img {
+    width: 60px;
+}
+
+.page-header h1 {
+    width: 976px;
+    height: 80px;
+    margin: 0 auto;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 80px;
+    letter-spacing: 0.1em;
+}
+
+.page-main {
+    position: relative;
+}
+
+.page-main > div {
+    padding: 50px 0 100px;
+}
+
+.page-main > div h2 {
+    color: #fff;
+    text-align: center;
+    margin: 0 0 50px;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+}
+
+.item {
+    margin: 0;
+    padding: 0;
+    background-color: #3498db;
+    font-weight: bold;
+    font-size: 110px;
+    color: #fff;
+    text-align: center;
+    line-height: 800px;
+    height: 800px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.item .inner {
+    position: relative;
+    width: 976px;
+    margin: 0 auto;
+}
+
+.page-footer {
+    background-color: #656565;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+/*
+ * Helpers
+ */
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+
+
+
+/* 타겟 박스 */
+.target-box {
+    margin: 59px auto;
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    border: 3px solid black;
+    background-color: cornflowerblue;
+}
+
+.flex-container {
+    width: 800px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 100px auto;
+}
+
+.flex-container button {
+    width: 140px;
+    height: 100px;
+    font-size: 14px;
+}
+
+.item {
+    position: relative;
+}
+
+
+#box5.active {
+    animation: changeBG 2s;
+    animation-fill-mode: forwards;  /* 애니메이션 마지막 프레임에 고정 */
+}
+#box5.reset {
+    animation: resetBG 2s;
+    animation-fill-mode: forwards;  /* 애니메이션 마지막 프레임에 고정 */
+}
+
+@keyframes changeBG {
+    0% {}
+    100% {
+        width: 600px;
+        background-color: orange;
+    }
+}
+
+@keyframes resetBG {
+    0% {
+        width: 600px;
+        background-color: orange;
+    }
+    100% {
+        width: 150px;
+        background-color: cornflowerblue;
+    }
+}
