@@ -39,6 +39,38 @@
 - 아래 사이트에서 웹 인터페이스를 통해 프로젝트를 구성을 할 수 있고, 필요한 의존성을 선택하고, 설정 파일을 생성할 수 있습니다.
 - https://start.spring.io/
 
+<br>
+
+---
+
+<br>
+
+# Eclips X Spring Boot
+<br>
+
+### Eclips에 스프링 부트 설치하기 <br>
+    1. 이클립스 실행 후 우측 상단에 Help - Eclips Marketplace 클릭
+    2. 검색 창에 Spring 검색 후 Spring Tools Suite 클릭 후 install
+<br>
+
+### Spring Boot 프로젝트 생성하기 <br>
+1. [File] -> [Other] -> [Spring Starter Project]
+
+2. 프로젝트 정보 입력 <br>
+    a. Project Name : sample <br>
+    b. Spring Boot Version : 3.x.x <br>
+    c. Build Tool : gradle <br>
+    d. Java Version : 17 <br>
+    e. Group ID : sample <br>
+    f. Artifact ID : sample <br>
+    g. Dependencies <br>
+    
+        i. Spring Web <br>
+        ii. Spring Boot DevTools <br>
+        iii. Thymeleaf <br>
+
+<br>
+
 
 
 
