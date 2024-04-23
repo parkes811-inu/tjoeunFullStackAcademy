@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eunseo.springrequest.dto.Board;
@@ -119,7 +120,7 @@ public class BoardController {
 
     /**
      * 게시글 삭제 처리
-     * [POST]
+     * [DELETE]
      * /board
      * - response : 
      * ✅ 요청 성공 : 200 OK            "SUCCESS"  
@@ -129,8 +130,10 @@ public class BoardController {
      * @throws Exception
      */
     @DeleteMapping(value="")
-    public ResponseEntity<String> deletePro(int no) throws Exception {
+    public ResponseEntity<String> deletePro(@RequestParam("no") int no) throws Exception {
         int result = new Random().nextInt(2);
+
+        log.info("삭제할 게시글 번호 - no : " + no);
 
         if( result == 0 ) {
             return new ResponseEntity<>("FAIL", HttpStatus.BAD_REQUEST);
