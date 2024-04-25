@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시글 수정</title>
+    <title>게시글 조회</title>
 </head>
 <body>
+    <h1>게시글 조회</h1>
 
-    <form id="form" action="/board/update" method="post">
+    <form action="/board/delete" method="post">
         <input type="hidden" name="no" th:value="${board.no}">
         <table>
             <tr>
@@ -30,15 +31,13 @@
             </tr>
         </table>
         <div>
+            <button type="button" onclick="moveUpdate()">수정</button>
             <button type="button" onclick="moveList()">목록</button>
-            <button type="submit">수정</button>
-            <button type="button" onclick="actionDelete()">삭제</button>
         </div>
-
+    </form>
     <script>
-        let form = document.getElementById('form') 
         // 모델 객체를 자바스크립트로 가져오는 방법
-        let no = "[[board.no]]";
+        let no = "[[${board.no}]]";
 
         // 수정 화면 이동
         function moveUpdate() {
@@ -46,20 +45,9 @@
         }
 
         // 목록 화면 이동
-        function moveList() {
+         function moveList() {
             location.href = '/board/list';
         }
-        
-        // 삭제 요청
-        function actionDelete() {
-            let check = confirm('정말로 삭제하시겠습니까?')
-            if( check ) {
-                form.action = '/board/delete'
-                form.submit()
-            }
-        }
-
-        
     </script>
 </body>
 </html>

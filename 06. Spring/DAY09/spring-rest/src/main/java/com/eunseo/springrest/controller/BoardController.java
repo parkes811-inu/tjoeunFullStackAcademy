@@ -1,4 +1,4 @@
-package com.eunseo.springmybatis.controller;
+package com.eunseo.springrest.controller;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.eunseo.springmybatis.dto.Board;
-import com.eunseo.springmybatis.service.BoardService;
+import com.eunseo.springrest.dto.Board;
+import com.eunseo.springrest.service.BoardService;
 
 import lombok.extern.slf4j.Slf4j;
 
