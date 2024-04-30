@@ -1,18 +1,13 @@
-package com.eunseo.board.mapper;
+package com.aloha.board.service;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
+import com.aloha.board.dto.Board;
 
-import com.eunseo.board.dto.Board;
-
-
-
-@Mapper
-public interface BoardMapper {
+public interface BoardService {
 
     // 게시글 목록
-    public List<Board> list() throws Exception;
+    public List<Board> list() throws Exception;     // 예외 전가
     // 게시글 조회
     public Board select(int no) throws Exception;
     // 게시글 등록
@@ -21,8 +16,5 @@ public interface BoardMapper {
     public int update(Board board) throws Exception;
     // 게시글 삭제
     public int delete(int no) throws Exception;
-    
-    // 게시글 번호(기본키) 최댓값
-    public int maxPk() throws Exception;
     
 }

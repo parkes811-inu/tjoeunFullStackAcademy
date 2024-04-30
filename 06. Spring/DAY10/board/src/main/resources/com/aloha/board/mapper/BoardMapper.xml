@@ -4,13 +4,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- namespace="매퍼 인터페이스 경로" --> 
-<mapper namespace="com.eunseo.board.mapper.BoardMapper">
+<mapper namespace="com.aloha.board.mapper.BoardMapper">
 
     <!-- 게시글 목록 -->
     <select id="list" resultType="Board">
-        SELECT *
-        FROM board
-        ORDER BY reg_date DESC
+        SELECT b.*
+            ,f.no file_no
+            ,f.file_name
+            ,f.file_path
+            ,f.file_code
+        FROM board b LEFT JOIN ( 
+                                SELECT *
+                                FROM file
+                                WHERE parent_table = "board"
+                                AND file_code = 1          
+                                ) f
+                    ON (b.no = f.parent_no)
+        ORDER BY b.reg_date DESC
     </select>
 
     <!-- 게시글 조회 -->
@@ -32,6 +42,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
            SET title = #{title}
               ,writer = #{writer}
               ,content = #{content}
+              ,upd_date = now()     
         WHERE no = #{no}
     </update>
 

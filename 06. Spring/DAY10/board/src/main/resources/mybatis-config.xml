@@ -14,7 +14,7 @@
 	<!-- 타입 별칭 설정 -->
 	<typeAliases>
 		<!-- 테이블과 매핑할 DTO가 있는 패키지 경로 지정 -->
-		<package name="com.eunseo.board.dto"/>
+		<package name="com.aloha.board.dto"/>
 	</typeAliases>	
 
 

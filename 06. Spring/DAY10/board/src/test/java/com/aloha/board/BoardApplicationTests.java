@@ -1,10 +1,10 @@
-package com.eunseo.board;
+package com.aloha.board;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BoardApplicationTests {
+class SpringMybatisApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,4 +1,4 @@
-package com.eunseo.board.dto;
+package com.aloha.board.dto;
 
 import java.util.Date;
 import java.util.List;
@@ -20,8 +20,14 @@ public class Board {
     private Date regDate;
     private Date updDate;
     private int views;
-
+    
+    // 썸네일 이미지 파일
+    MultipartFile thumbnail;
+    
     // 파일
     List<MultipartFile> file;
+
+    // 파일 번호
+    private int fileNo;
 }
  

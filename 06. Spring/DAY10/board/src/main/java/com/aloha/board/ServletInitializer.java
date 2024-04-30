@@ -1,4 +1,4 @@
-package com.eunseo.board;
+package com.aloha.board;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

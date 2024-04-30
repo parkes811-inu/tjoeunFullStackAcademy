@@ -1,4 +1,4 @@
-package com.eunseo.board.dto;
+package com.aloha.board.dto;
 
 import java.util.Date;
 

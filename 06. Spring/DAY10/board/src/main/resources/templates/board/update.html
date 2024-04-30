@@ -6,9 +6,11 @@
     <title>게시글 수정</title>
 </head>
 <body>
+    <h1>게시글 수정</h1>
 
     <form id="form" action="/board/update" method="post">
         <input type="hidden" name="no" th:value="${board.no}">
+
         <table>
             <tr>
                 <td>제목</td>
@@ -23,7 +25,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"> 
+                <td colspan="2">
                     <textarea name="content" id="content" cols="40" rows="5"
                               th:text="${board.content}"></textarea>
                 </td>
@@ -32,12 +34,11 @@
                 <td>파일</td>
                 <td>
                     <ul>
-                        <!-- 파일 목록-->
+                        <!-- 파일 목록 -->
                         <th:block th:each="file : ${fileList}">
                             <li>
                                 <!-- 파일명 (다운로드) -->
                                 <a th:href="|/file/${file.no}|" th:text="${file.originName}"></a>
-
                                 <!-- 파일 삭제 -->
                                 <button type="button" th:onclick="|deleteFile(this, ${file.no})|">삭제</button>
                             </li>
@@ -47,26 +48,23 @@
             </tr>
         </table>
         <div>
-            <button type="button" onclick="moveList()">목록</button>
             <button type="submit">수정</button>
             <button type="button" onclick="actionDelete()">삭제</button>
+            <button type="button" onclick="moveList()">목록</button>
         </div>
+    </form>
 
     <script>
-        let form = document.getElementById('form') 
-        // 모델 객체를 자바스크립트로 가져오는 방법
-        let no = "[[board.no]]";
+        let form = document.getElementById('form')
 
+        // 👩‍💻 모델 객체를 자바스크립트로 가져오는 방법
+        let no = "[[${board.no}]]"
+        
         // 수정 화면 이동
         function moveUpdate() {
-            location.href = '/board/update?no=' + no;
+            location.href = '/board/update?no=' + no
         }
-
-        // 목록 화면 이동
-        function moveList() {
-            location.href = '/board/list';
-        }
-        
+ 
         // 삭제 요청
         function actionDelete() {
             let check = confirm('정말로 삭제하시겠습니까?')
@@ -76,26 +74,31 @@
             }
         }
 
-         // 파일 삭제 버튼 이벤트
-         function deleteFile(element, no) {
+        // 목록 화면 이동
+        function moveList() {
+            location.href = '/board/list'
+        }
+
+        // 파일 삭제
+        function deleteFile(element, no) {
+            // alert(no)
+
             // AJAX 비동기 요청
-            
+            let request = new XMLHttpRequest()
+
             // 요청 세팅
-            let request = new XMLHttpRequest();
-            request.open('DELETE', '/file/' + no);
-            request.send();
+            // request.open(요청메소드, URL)
+            request.open('DELETE', '/file/' + no)
+            request.send()
 
             request.onreadystatechange = function() {
 
                 // 요청 성공 시,
-                if(request.readyStat == request.DONE &&
-                    request.status == 200) {
-
-                    console.log('파일 삭제 성공!~');
+                if( request.readyState == request.DONE && request.status == 200 ) {
+                    console.log('파일 삭제 성공!');
                     // 파일 항목 제거
-                    element.parentNode.remove();
+                    element.parentNode.remove()
                 }
-                window.location.reload(true);
             }
         }
     </script>
