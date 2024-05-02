@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- namespace="매퍼 인터페이스 경로" --> 
 <mapper namespace="com.aloha.board.mapper.BoardMapper">
 
-    <!-- 게시글 목록 -->
+    <!-- 게시글 목록 - [페이징] + [검색] -->
     <select id="list" resultType="Board">
         SELECT b.*
             ,f.no file_no
@@ -20,15 +20,42 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                                 AND file_code = 1          
                                 ) f
                     ON (b.no = f.parent_no)
+        WHERE 
+            <if test="option.code == 0">
+                   title LIKE CONCAT('%', #{option.keyword}, '%')
+                OR writer LIKE CONCAT('%', #{option.keyword}, '%')
+                OR content LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 1">
+                   title LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 2">
+                   content LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 3">
+                   title LIKE CONCAT('%', #{option.keyword}, '%')
+                OR content LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 4">
+                   writer LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
         ORDER BY b.reg_date DESC
+        LIMIT #{page.index}, #{page.rows}
     </select>
 
     <!-- 게시글 조회 -->
     <select id="select" resultType="Board">
         SELECT *
-        FROM board
-        WHERE no = #{no}
+          FROM board
+         WHERE no = #{no}
     </select>
+
+    <!-- 조회 수 증가 -->
+    <update id="views">
+        UPDATE board
+           SET views = views + 1
+         WHERE no = #{no}
+    </update>
 
     <!-- 게시글 등록 -->
     <insert id="insert">
@@ -49,15 +76,65 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <!-- 게시글 삭제 -->
     <delete id="delete">
         DELETE FROM board
-        WHERE no = #{no}
+         WHERE no = #{no}
     </delete>
 
     <!-- 게시글 번호 최댓값 -->
     <select id="maxPk" resultType="int">
         SELECT MAX(no)
-        FROM board
+          FROM board
     </select>
 
+    <!-- 데이터 개수 조회 -->
+    <select id="count" resultType="int">
+        SELECT COUNT(*)
+          FROM board
+         WHERE
+          <if test="option.code == 0">
+                   title LIKE CONCAT('%', #{option.keyword}, '%')
+                OR writer LIKE CONCAT('%', #{option.keyword}, '%')
+                OR content LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 1">
+                   title LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 2">
+                   content LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 3">
+                   title LIKE CONCAT('%', #{option.keyword}, '%')
+                OR content LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 4">
+                   writer LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+        ORDER BY reg_date DESC
+    </select>
 
-
+    <!-- 게시글 목록 검색 - [검색] -->
+    <select id="search" resultType="Board">
+        SELECT *
+          FROM Board
+         WHERE 
+            <if test="option.code == 0">
+                   title LIKE CONCAT('%', #{option.keyword}, '%')
+                OR writer LIKE CONCAT('%', #{option.keyword}, '%')
+                OR content LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 1">
+                   title LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 2">
+                   content LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 3">
+                   title LIKE CONCAT('%', #{option.keyword}, '%')
+                OR content LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+            <if test="option.code == 4">
+                   writer LIKE CONCAT('%', #{option.keyword}, '%')
+            </if>
+      ORDER BY reg_date DESC
+      LIMIT 0, 10
+    </select>
 </mapper>

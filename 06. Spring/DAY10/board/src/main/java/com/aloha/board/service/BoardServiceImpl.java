@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.aloha.board.dto.Board;
 import com.aloha.board.dto.Files;
+import com.aloha.board.dto.Option;
+import com.aloha.board.dto.Page;
 import com.aloha.board.mapper.BoardMapper;
 import com.aloha.board.mapper.FileMapper;
 
@@ -32,13 +35,18 @@ public class BoardServiceImpl implements BoardService {
      * 게시글 목록 조회
      */
     @Override
-    public List<Board> list() throws Exception {
+    public List<Board> list(Page page, Option option) throws Exception {
         // TODO : boardMapper 로 list() 호출
         /*
          *        ➡ List<Board> boardList 로 받아옴
          *        ➡ return boardList
          */
-        List<Board> boardList = boardMapper.list();
+
+        // 게시글 데이터 개수 조회
+        int total = boardMapper.count(option);
+        page.setTotal(total);
+
+        List<Board> boardList = boardMapper.list(page, option);
         return boardList;
     }
 
@@ -55,6 +63,7 @@ public class BoardServiceImpl implements BoardService {
          *        ➡ return board
          */
         Board board = boardMapper.select(no);
+
         return board;        
     }
 
@@ -136,5 +145,23 @@ public class BoardServiceImpl implements BoardService {
         return result;
     }
 
+    /**
+     * 검색 기능
+     */
+    @Override
+    public List<Board> search(@Param("option") Option option) throws Exception {
+        List<Board> boardList = boardMapper.search(option);
+        return boardList;
+    }
 
+
+    /**
+     * 조회 수
+     */
+    @Override
+    public void views(int no) throws Exception {
+        boardMapper.views(no);
+    }
+
+    
 }
