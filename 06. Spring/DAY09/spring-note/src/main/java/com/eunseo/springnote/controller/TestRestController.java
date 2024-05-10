@@ -23,4 +23,4 @@ public class TestRestController {
         return "REST";
     }
     
-}th
+}
