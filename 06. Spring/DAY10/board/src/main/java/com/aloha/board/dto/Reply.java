@@ -2,6 +2,7 @@ package com.aloha.board.dto;
 
 import java.util.Date;
 import lombok.Data;
+import java.util.*;;
 
 /**
  * Board 
@@ -17,5 +18,6 @@ public class Reply {
     private Date regDate;
     private Date updDate;
     
+    List<Reply> childList;
 }
  

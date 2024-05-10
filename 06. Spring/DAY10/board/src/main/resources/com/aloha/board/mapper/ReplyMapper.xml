@@ -30,6 +30,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         UPDATE reply
            SET writer = #{writer}
               ,content = #{content}
+              <if test="parentNo != 0">
+              , parent_no = #{parentNo}
+              </if>
               ,upd_date = now()     
         WHERE no = #{no}
     </update>
@@ -47,7 +50,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         SELECT * 
         FROM reply
         WHERE board_no = #{boardNo}
-        ORDER BY reg_date DESC
+        ORDER BY parent_no DESC
+               , reg_date ASC
     </select>
     
-</mapper>
+    <!-- ⭐댓글 종속 삭제 -->
+    <delete id="deleteByBoardNo">
+        DELETE FROM reply
+         WHERE board_no = #{boardNo}
+    </delete>
+
+    <select id="max" resultType="int">
+        SELECT MAX(no)
+          FROM reply
+    </select>
+
+    <!-- 답글 종속 삭제 -->
+    <delete id="deleteByParentNo">
+        DELETE FROM reply
+         WHERE parent_no = #{parentNo}
+    </delete>
+</mapper>  

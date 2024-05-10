@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>게시글 조회</title>
     <style>
+        .reply-box.answer {
+            margin-left: 40px;
+        }
+
         .reply-box .inner {
             min-width: 500px;
             max-width: 100vw;
@@ -265,14 +269,14 @@
                 })
             }
             
-            for(let i = 0; i < $btnDelete.length; i++) {
+            // for(let i = 0; i < $btnDelete.length; i++) {
                 
-                $btnDelete[i].addEventListener('click', function() {
-                    let no = $btnDelete[i].getAttribute('data');
-                    // alert(`삭제 ㅋ + ${no}`);
-                    deleteReply(no);
-                });
-            }
+            //     $btnDelete[i].addEventListener('click', function() {
+            //         let no = $btnDelete[i].getAttribute('data');
+            //         // alert(`삭제 ㅋ + ${no}`);
+            //         deleteReply(no);
+            //     });
+            // }
         }
 
         // 댓글 수정 요청
@@ -322,6 +326,12 @@
         // 댓글 삭제 요청
         function deleteReply(no) {
 
+            const check = confirm("정말로 삭제하겠습니까?");
+
+            if(!check || no === null) {
+                return;
+            }
+
             // 삭제 요청
             // XMLHttpRequest 객체 생성
             let request = new XMLHttpRequest();
@@ -340,6 +350,91 @@
                         replyList()     // 댓글 목록 갱신
                     }
                 }
+            }
+        }
+
+        // 답글 등록 함수
+        function insertAnswer(element, no) {
+            let $replyBox = element.parentNode.parentNode;
+            console.log(`부모 번호 : ${no}`);
+            console.log($replyBox);
+
+            // 답글 작성 UI
+            let $editor = document.createElement('div');
+            $editor.classList.add('reply-box');
+            $editor.id = 'answer';
+            // <div id="answer" class="reply-box">
+            let editor = ``;
+            editor += `<div class="inner">`;
+            editor += `<input type="text" id="answer-writer" />`;
+            editor += `<br>`;
+            editor += `<textarea cols="60" rows="5" id="answer-content"></textarea>`
+            editor += `<br>`;
+            editor += `<button onclick="answer(${no})">등록</button>`;
+            editor += `<button onclick="cancelAnswer()">취소</button>`;
+            editor += `</div>`;
+            $editor.innerHTML = editor;
+            
+            // 기존 답글 UI가 있으면 초기화
+            let $answer = document.getElementById("answer");
+            if($answer) {
+                $answer.parentNode.removeChild($answer);
+            }
+
+            // 요소.after(새 요소)
+            // - 요소 바로 뒤에 새 요소를 추가한다.
+            $replyBox.after($editor);
+        }
+        
+        // 답글 등록 요청
+        function answer(parentNo) {
+            // TODO: 
+            // 1. answer-writer, answer-content 값을 가져오고
+            let writer = document.getElementById('answer-writer').value;
+            let content = document.getElementById('answer-content').value;
+            console.log(`${no}`); 
+            console.log(writer);
+            
+            // 2. data = { 부모 번호, 작성자, 내용 }
+            var data = {
+                'boardNo'   : no,
+                'parentNo'  : parentNo,
+                'writer'    : writer,
+                'content'   : content
+            };
+            
+            // 3. POST - /reply 경로로 요청
+            //  답글 등록 요청
+            // XMLHttpRequest 객체 생성
+            let request = new XMLHttpRequest();
+            request.open('POST', '/reply');
+            request.setRequestHeader("Content-Type", "application/json")
+            // 요청 전송: JSON 문자열로 변환된 데이터를 함께 보냄
+            request.send(JSON.stringify(data));
+
+            request.onreadystatechange = function() {
+
+                // 요청 성공 시,
+                if( request.readyState == request.DONE && request.status == 201 ) {
+                    console.log("답글 등록 성공!");
+                    alert(request.responseText)         // 응답 메시지 확인
+                    let response = request.responseText
+                    if( response == 'SUCCESS') {
+                        replyList()     // 댓글 목록 갱신
+                        // 댓글 입력 창 비우기
+                        writer.value = ''
+                        content.value = ''
+                    }
+                }
+            }
+        }
+
+        // 댓글 수정 취소
+        function cancelAnswer() {
+            // 기존 답글 UI가 있으면 초기화
+            let $answer = document.getElementById("answer");
+            if($answer) {
+                $answer.parentNode.removeChild($answer);
             }
         }
     </script>
