@@ -20,6 +20,6 @@
   3. HTML/CSS
   4. Javascript
   5. JSP
-  6. Spring
-     a. Spring Boot
-     b. Spring Security
+  6. Spring <br>
+     a. Spring Boot <br>
+     b. Spring Security <br>
