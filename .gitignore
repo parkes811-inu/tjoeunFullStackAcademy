@@ -86,3 +86,13 @@ out/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+06. Spring/DAY04/Spring-Mybatis/.classpath
+06. Spring/DAY04/Spring-Mybatis/.settings/org.eclipse.jdt.core.prefs
+06. Spring/DAY04/Spring-Mybatis/target/classes/com/aloha/spring/HomeController.class
+06. Spring/DAY04/Spring-Mybatis/target/classes/com/aloha/spring/controller/BoardController.class
+06. Spring/DAY04/Spring-Mybatis/target/classes/com/aloha/spring/dto/Board.class
+06. Spring/DAY04/Spring-Mybatis/target/classes/com/aloha/spring/mapper/BoardMapper.class
+06. Spring/DAY04/Spring-Mybatis/target/classes/com/aloha/spring/service/BoardService.class
+06. Spring/DAY04/Spring-Mybatis/target/classes/com/aloha/spring/service/BoardServiceImpl.class
+07. React/DAY01/START/my-react-app/src/reportWebVitals.js
+07. React/DAY01/START/my-react-app/src/setupTests.js
