@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aloha.product.mapper.ProductMapper">
+    <!-- Create -->
+    <insert id="insert">
+        INSERT product INTO (name, price, img) 
+                       VALUES (#{name}, #{price}, #{img});
+    </insert>
+
+    <!-- Read -->
+    <select id="read" resultType="Product">
+        SELECT * 
+          FROM product
+         WHERE NO = #{no};
+    </select>
+
+    <!-- Read All -->
+    <select id="list" resultType="Product">
+        SELECT * 
+          FROM product
+    </select>
+    
+    <!-- Update -->    
+    <update id="update">
+        UPDATE product 
+           SET name = #{name}
+             , price = #{price}
+             , img = #{img}
+             , updated_at = now()
+         WHERE no = #{no}
+    </update>    
+
+    <!-- Delete -->
+    <delete id="delete">
+        DELETE product
+         WHERE no = #{no}
+    </delete>
+</mapper>
