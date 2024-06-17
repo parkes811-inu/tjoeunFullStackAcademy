@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import com.aloha.server.dto.Board;
 import com.aloha.server.mapper.BoardMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class BoardServiceImpl implements BoardService {
     @Autowired
@@ -25,6 +28,7 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public int update(Board board) throws Exception {
+        log.info("asdjflkjasdkljfklasdkljflkasd : " + board);
         return boardMapper.update(board);
     }
 
