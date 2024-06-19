@@ -62,4 +62,17 @@
            AND parent_no = #{parentNo}
          ORDER BY reg_date DESC
     </select>
+
+    <!-- 선택 삭제 -->
+    <delete id="deleteFiles">
+        DELETE FROM file
+         WHERE no IN ( ${no} )
+    </delete>
+
+    <!-- 파일 목록 삭제 -->
+    <delete id="deleteByParent">
+        DELETE FROM file
+        WHERE parent_table = #{parentTable}
+          AND parent_no = #{parentNo}
+    </delete>
 </mapper>

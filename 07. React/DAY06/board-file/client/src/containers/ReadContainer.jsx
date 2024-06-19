@@ -27,7 +27,7 @@ const ReadContainer = ({no}) => {
     }
 
     // 다운로드
-    const onDonwload = async (no, fileName) => {
+    const onDownload = async (no, fileName) => {
         const response = await files.download(no);
         console.log(response);
 
@@ -54,7 +54,7 @@ const ReadContainer = ({no}) => {
                   board={board}
                   fileList={fileList}
                   isLoading={isLoading}
-                  onDonwload={onDonwload}/>
+                  onDownload={onDownload}/>
         </>
     )
 }

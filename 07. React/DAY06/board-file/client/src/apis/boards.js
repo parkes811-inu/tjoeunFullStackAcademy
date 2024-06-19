@@ -8,7 +8,9 @@ export const select = (no) => axios.get(`/boards/${no}`)
 export const insert = (formData, headers) => axios.post("/boards", formData, headers)
 
 // 수정
-export const update = (no, title, writer, content) => axios.put("/boards", {no, title, writer, content})
+// export const update = (no, title, writer, content) => axios.put("/boards", {no, title, writer, content})
+export const update = (formData, headers) => axios.put("/boards", formData, headers);
+
 // 삭제
 export const remove = (no) => axios.delete(`/boards/${no}`)
 

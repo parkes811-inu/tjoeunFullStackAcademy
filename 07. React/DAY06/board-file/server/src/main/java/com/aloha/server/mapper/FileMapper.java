@@ -23,4 +23,11 @@ public interface FileMapper {
 
     // 파일 목록 - 부모 기준
     public List<Files> listByParent(Files file) throws Exception;
+
+    // 파일 선택 삭제
+    public int deleteFiles(String no) throws Exception;
+
+    // 파일 목록 삭제
+    public int deleteByParent(Files file) throws Exception;
+
 }
