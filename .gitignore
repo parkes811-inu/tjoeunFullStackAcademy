@@ -177,3 +177,84 @@ lib/generated_plugin_registrant.dart
 
 # App specific
 .env
+
+# Flutter/Dart/Pub related
+**/build/
+**/.dart_tool/
+**/.pub-cache/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/packages/**/generated_plugin_registrant.dart
+
+# iOS related
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.framework
+**/ios/Flutter/app.icns
+**/ios/Flutter/app.dSYM
+**/ios/Pods/
+**/ios/Runner.xcworkspace/
+**/ios/build/
+
+# Android related
+**/android/.gradle/
+**/android/app/*.iml
+**/android/app/build/
+**/android/gradle/
+**/android/*.iml
+**/android/.idea/
+**/android/local.properties
+**/android/app/google-services.json
+**/android/key.properties
+
+# VS Code related
+.vscode/
+.dart_tool/
+.vscode/
+build/
+flutter_*.png
+
+# Dependency directories
+/.dart_tool/
+/.packages
+.pub/
+/build/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Log files
+*.log
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Miscellaneous
+*.log
+*.tmp
+*.tmp.*
+*.swp
+*.lock
+*.zip
+*.tar.gz
+*.rar
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+
+# Flutter specific
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache
+.pub
+
+# App specific
+.env
